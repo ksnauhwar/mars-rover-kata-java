@@ -51,6 +51,11 @@ public class RoverSpec {
 
     @Test
     public void receiveSingleCommandShouldMoveForwardWhenCommandIsF() throws Exception {
+        Point x = new Point(1, 9);
+        Point y = new Point(2, 9);
+        List<Obstacle> obstacles = new ArrayList<Obstacle>();
+        Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
+        Rover rover = new Rover(roverCoordinates);
         int expected = y.getLocation() + 1;
         rover.receiveSingleCommand('F');
         assertThat(rover.getCoordinates().getY().getLocation()).isEqualTo(expected);
