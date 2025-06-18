@@ -30,15 +30,6 @@ public class RoverSpec {
     private Point y;
     private List<Obstacle> obstacles;
 
-    @Before
-    public void beforeRoverTest() {
-        x = new Point(1, 9);
-        y = new Point(2, 9);
-        obstacles = new ArrayList<Obstacle>();
-        roverCoordinates = new Coordinates(x, y, direction, obstacles);
-        rover = new Rover(roverCoordinates);
-    }
-
     @Test
     public void newInstanceShouldSetRoverCoordinatesAndDirection() {
         Point x = new Point(1, 9);
