@@ -10,39 +10,45 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 public class CoordinatesSpec {
-
-    private Coordinates coordinates;
-    private Point x;
-    private Point y;
-    private List<Obstacle> obstacles;
-    private final Direction direction = Direction.NORTH;
-
-    @BeforeEach
-    public void beforeCoordinatesTest() {
-        x = new Point(1, 99);
-        y = new Point(2, 99);
-        obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
-        coordinates = new Coordinates(x, y, direction, obstacles);
-    }
-
+    
     @Test
     public void newInstanceShouldSetXAndYParams() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         assertThat(coordinates.getX()).isEqualToComparingFieldByField(x);
         assertThat(coordinates.getY()).isEqualToComparingFieldByField(y);
     }
 
     @Test
     public void newInstanceShouldSetDirection() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         assertThat(coordinates.getDirection()).isEqualTo(direction);
     }
 
     @Test
     public void newInstanceShouldSetObstacles() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         assertThat(coordinates.getObstacles()).hasSameElementsAs(obstacles);
     }
 
     @Test
     public void moveForwardShouldIncreaseYWhenDirectionIsNorth() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(y.getLocation() + 1, y.getMaxLocation());
         coordinates.setDirection(Direction.NORTH);
         coordinates.moveForward();
@@ -51,6 +57,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveForwardShouldIncreaseXWhenDirectionIsEast() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(x.getLocation() + 1, x.getMaxLocation());
         coordinates.setDirection(Direction.EAST);
         coordinates.moveForward();
@@ -59,6 +70,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveForwardShouldDecreaseYWhenDirectionIsSouth() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(y.getLocation() - 1, y.getMaxLocation());
         coordinates.setDirection(Direction.SOUTH);
         coordinates.moveForward();
@@ -67,6 +83,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveForwardShouldDecreaseXWhenDirectionIsWest() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(x.getLocation() - 1, x.getMaxLocation());
         coordinates.setDirection(Direction.WEST);
         coordinates.moveForward();
@@ -75,6 +96,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveForwardShouldNotChangeLocationsWhenObstacleIsFound() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         int expected = x.getLocation();
         coordinates.setDirection(Direction.EAST);
         coordinates.setObstacles(Arrays.asList(new Obstacle(x.getLocation() + 1, y.getLocation())));
@@ -84,6 +110,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveBackwardShouldDecreaseYWhenDirectionIsNorth() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(y.getLocation() - 1, y.getMaxLocation());
         coordinates.setDirection(Direction.NORTH);
         coordinates.moveBackward();
@@ -92,6 +123,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveBackwardShouldDecreaseXWhenDirectionIsEast() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(x.getLocation() - 1, x.getMaxLocation());
         coordinates.setDirection(Direction.EAST);
         coordinates.moveBackward();
@@ -100,6 +136,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveBackwardShouldIncreaseYWhenDirectionIsSouth() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(y.getLocation() + 1, y.getMaxLocation());
         coordinates.setDirection(Direction.SOUTH);
         coordinates.moveBackward();
@@ -108,6 +149,11 @@ public class CoordinatesSpec {
 
     @Test
     public void moveBackwardShouldIncreaseXWhenDirectionIsWest() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         Point expected = new Point(x.getLocation() + 1, x.getMaxLocation());
         coordinates.setDirection(Direction.WEST);
         coordinates.moveBackward();
@@ -116,6 +162,11 @@ public class CoordinatesSpec {
 
     @Test
     public void toStringShouldReturnXAndY() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
         String expected = x.getLocation() + " X " + y.getLocation() + " " + direction.getShortName();
         assertThat(coordinates.toString()).isEqualTo(expected);
     }
