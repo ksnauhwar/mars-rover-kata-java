@@ -1,6 +1,5 @@
 package com.technologyconversations.kata.marsrover;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -25,13 +24,14 @@ public class RoverSpec {
 
     private Rover rover;
     private Coordinates roverCoordinates;
-    private final Direction direction = Direction.NORTH;
+
     private Point x;
     private Point y;
     private List<Obstacle> obstacles;
 
     @Test
     public void newInstanceShouldSetRoverCoordinatesAndDirection() {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -42,30 +42,31 @@ public class RoverSpec {
 
     @Test
     public void receiveSingleCommandShouldMoveForwardWhenCommandIsF() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
         Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
         Rover rover = new Rover(roverCoordinates);
-        int expected = y.getLocation() + 1;
         rover.receiveSingleCommand('F');
-        assertThat(rover.getCoordinates().getY().getLocation()).isEqualTo(expected);
+        assertThat(rover.getCoordinates().getY().getLocation()).isEqualTo(3);
     }
 
     @Test
     public void receiveSingleCommandShouldMoveBackwardWhenCommandIsB() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
         Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
         Rover rover = new Rover(roverCoordinates);
-        int expected = y.getLocation() - 1;
         rover.receiveSingleCommand('B');
-        assertThat(rover.getCoordinates().getY().getLocation()).isEqualTo(expected);
+        assertThat(rover.getCoordinates().getY().getLocation()).isEqualTo(1);
     }
 
     @Test
     public void receiveSingleCommandShouldTurnLeftWhenCommandIsL() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -77,6 +78,7 @@ public class RoverSpec {
 
     @Test
     public void receiveSingleCommandShouldTurnRightWhenCommandIsR() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -88,6 +90,7 @@ public class RoverSpec {
 
     @Test
     public void receiveSingleCommandShouldIgnoreCase() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -99,6 +102,7 @@ public class RoverSpec {
 
     @Test(expected = Exception.class)
     public void receiveSingleCommandShouldThrowExceptionWhenCommandIsUnknown() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -108,32 +112,58 @@ public class RoverSpec {
     }
 
     @Test
-    public void receiveCommandsShouldBeAbleToReceiveMultipleCommands() throws Exception {
+    public void receiveCommandsShouldBeAbleToReceiveMultipleCommandsAndRoverShouldArriveAtCorrectLocation() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
         Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
         Rover rover = new Rover(roverCoordinates);
-        int expected = x.getLocation() + 1;
         rover.receiveCommands("RFR");
-        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(expected);
+        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(2);
+    }
+
+    @Test
+    public void receiveCommandsShouldBeAbleToReceiveMultipleCommandsAndRoverFacesCorrectDirection() throws Exception {
+        final Direction direction = Direction.NORTH;
+        Point x = new Point(1, 9);
+        Point y = new Point(2, 9);
+        List<Obstacle> obstacles = new ArrayList<Obstacle>();
+        Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
+        Rover rover = new Rover(roverCoordinates);
+        rover.receiveCommands("RFR");
         assertThat(rover.getCoordinates().getDirection()).isEqualTo(Direction.SOUTH);
     }
 
     @Test
     public void receiveCommandShouldWhatFromOneEdgeOfTheGridToAnother() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
         Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
         Rover rover = new Rover(roverCoordinates);
-        int expected = x.getMaxLocation() + x.getLocation() - 2;
         rover.receiveCommands("LFFF");
-        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(expected);
+        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(8);
     }
 
     @Test
     public void receiveCommandsShouldStopWhenObstacleIsFound() throws Exception {
+        final Direction direction = Direction.NORTH;
+        Point x = new Point(1, 9);
+        Point y = new Point(2, 9);
+        List<Obstacle> obstacles = new ArrayList<Obstacle>();
+        Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
+        Rover rover = new Rover(roverCoordinates);
+        rover.getCoordinates().setObstacles(Arrays.asList(new Obstacle(3, y.getLocation())));
+        rover.getCoordinates().setDirection(Direction.EAST);
+        rover.receiveCommands("FFFRF");
+        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(2);
+    }
+
+    @Test
+    public void receiveCommandsShouldFaceInItsCurrentDirectionWhenObstacleIsFound() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -143,12 +173,12 @@ public class RoverSpec {
         rover.getCoordinates().setObstacles(Arrays.asList(new Obstacle(expected + 1, y.getLocation())));
         rover.getCoordinates().setDirection(Direction.EAST);
         rover.receiveCommands("FFFRF");
-        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(expected);
         assertThat(rover.getCoordinates().getDirection()).isEqualTo(Direction.EAST);
     }
 
     @Test
     public void positionShouldReturnXYAndDirection() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -160,6 +190,7 @@ public class RoverSpec {
 
     @Test
     public void positionShouldReturnNokWhenObstacleIsFound() throws Exception {
+        final Direction direction = Direction.NORTH;
         Point x = new Point(1, 9);
         Point y = new Point(2, 9);
         List<Obstacle> obstacles = new ArrayList<Obstacle>();
