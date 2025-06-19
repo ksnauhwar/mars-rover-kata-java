@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.technologyconversations.kata.marsrover.CoordinatesSpec" tests="18" skipped="0" failures="0" errors="0" timestamp="2025-06-19T12:28:07.998Z" hostname="KULDEEP" time="0.105">
+<testsuite name="com.technologyconversations.kata.marsrover.CoordinatesSpec" tests="18" skipped="0" failures="0" errors="0" timestamp="2025-06-19T12:33:05.876Z" hostname="KULDEEP" time="0.116">
   <properties/>
-  <testcase name="moveBackwardShouldDecreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.048"/>
-  <testcase name="moveForwardShouldDecreaseXWhenDirectionIsWest()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="moveBackwardShouldDecreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.062"/>
+  <testcase name="moveForwardShouldDecreaseXWhenDirectionIsWest()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.002"/>
   <testcase name="newInstanceShouldSetDirection()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.003"/>
-  <testcase name="newInstanceShouldSetXMaxLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
-  <testcase name="moveForwardShouldIncreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.0"/>
-  <testcase name="newInstanceShouldSetYMaxLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
-  <testcase name="newInstanceShouldSetXLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.002"/>
-  <testcase name="moveBackwardShouldIncreaseXWhenDirectionIsWest()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.007"/>
+  <testcase name="newInstanceShouldSetXMaxLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.002"/>
+  <testcase name="moveForwardShouldIncreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="newInstanceShouldSetYMaxLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.002"/>
+  <testcase name="newInstanceShouldSetXLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="moveBackwardShouldIncreaseXWhenDirectionIsWest()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.0"/>
   <testcase name="moveBackwardShouldIncreaseYWhenDirectionIsSouth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
-  <testcase name="toStringShouldReturnXAndY()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.015"/>
+  <testcase name="toStringShouldReturnXAndY()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.011"/>
   <testcase name="moveForwardShouldNotChangeLocationsWhenObstacleIsFound()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
-  <testcase name="newInstanceShouldNumberOfObstaclesCorrectly()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="newInstanceShouldNumberOfObstaclesCorrectly()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.002"/>
   <testcase name="moveBackwardShouldDecreaseXWhenDirectionIsEast()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
   <testcase name="newInstanceShouldSetObstaclesFirstElementX()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
   <testcase name="newInstanceShouldSetObstaclesFirstElementY()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>

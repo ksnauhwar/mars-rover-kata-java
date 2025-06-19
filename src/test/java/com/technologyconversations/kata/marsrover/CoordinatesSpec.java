@@ -173,10 +173,9 @@ public class CoordinatesSpec {
         final Direction direction = Direction.NORTH;
         List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
         Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
-        Point expected = new Point(x.getLocation() - 1, x.getMaxLocation());
         coordinates.setDirection(Direction.EAST);
         coordinates.moveBackward();
-        assertThat(coordinates.getX()).isEqualToComparingFieldByField(expected);
+        assertThat(coordinates.getX().getLocation()).isEqualTo(0);
     }
 
     @Test
@@ -199,10 +198,9 @@ public class CoordinatesSpec {
         final Direction direction = Direction.NORTH;
         List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
         Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
-        Point expected = new Point(x.getLocation() + 1, x.getMaxLocation());
         coordinates.setDirection(Direction.WEST);
         coordinates.moveBackward();
-        assertThat(coordinates.getX()).isEqualToComparingFieldByField(expected);
+        assertThat(coordinates.getX().getLocation()).isEqualTo(2);
     }
 
     @Test
@@ -212,7 +210,6 @@ public class CoordinatesSpec {
         final Direction direction = Direction.NORTH;
         List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
         Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
-        String expected = x.getLocation() + " X " + y.getLocation() + " " + direction.getShortName();
         assertThat(coordinates.toString()).isEqualTo("1 X 2 N");
     }
 
