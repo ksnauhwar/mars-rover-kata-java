@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.technologyconversations.kata.marsrover.PointSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-06-19T11:55:06.218Z" hostname="KULDEEP" time="0.055">
+<testsuite name="com.technologyconversations.kata.marsrover.PointSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-06-19T11:57:34.421Z" hostname="KULDEEP" time="0.054">
   <properties/>
-  <testcase name="newInstanceShouldSetLocationAndMaxLocationParams()" classname="com.technologyconversations.kata.marsrover.PointSpec" time="0.047"/>
+  <testcase name="newInstanceShouldSetLocationAndMaxLocationParams()" classname="com.technologyconversations.kata.marsrover.PointSpec" time="0.046"/>
   <testcase name="getBackwardLocationShouldDecreasePointValueByOne()" classname="com.technologyconversations.kata.marsrover.PointSpec" time="0.001"/>
   <testcase name="getForwardLocationShouldSetValueToZeroIfMaxLocationIsPassed()" classname="com.technologyconversations.kata.marsrover.PointSpec" time="0.001"/>
   <testcase name="getForwardLocationShouldIncreasePointValueByOne()" classname="com.technologyconversations.kata.marsrover.PointSpec" time="0.001"/>

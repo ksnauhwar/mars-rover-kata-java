@@ -12,31 +12,24 @@ If maximum location is reached, forward/backward methods wrap location.
 */
 public class PointSpec {
 
-    private final int location = 5;
-    private final int maxLocation = 9;
-
-
     @Test
     public void newInstanceShouldSetLocationAndMaxLocationParams() {
         Point point = new Point(5, 9);
-        assertThat(point.getLocation()).isEqualTo(location);
-        assertThat(point.getMaxLocation()).isEqualTo(maxLocation);
+        assertThat(point.getLocation()).isEqualTo(5);
+        assertThat(point.getMaxLocation()).isEqualTo(9);
     }
 
     @Test
     public void getForwardLocationShouldIncreasePointValueByOne() {
         Point point = new Point(5, 9);
-
-        int expected = point.getLocation() + 1;
-        assertThat(point.getForwardLocation()).isEqualTo(expected);
+        assertThat(point.getForwardLocation()).isEqualTo(6);
     }
 
     @Test
     public void getBackwardLocationShouldDecreasePointValueByOne() {
         Point point = new Point(5, 9);
 
-        int expected = point.getLocation() - 1;
-        assertThat(point.getBackwardLocation()).isEqualTo(expected);
+        assertThat(point.getBackwardLocation()).isEqualTo(4);
     }
 
     @Test
@@ -51,7 +44,7 @@ public class PointSpec {
     public void getBackwardLocationShouldSetValueToMaxLocationIfZeroLocationIsPassed() {
         Point point = new Point(5, 9);
         point.setLocation(0);
-        assertThat(point.getBackwardLocation()).isEqualTo(point.getMaxLocation());
+        assertThat(point.getBackwardLocation()).isEqualTo(9);
     }
 
 }
