@@ -10,16 +10,45 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 public class CoordinatesSpec {
-    
+
     @Test
-    public void newInstanceShouldSetXAndYParams() {
+    public void newInstanceShouldSetXLocation() {
         Point x = new Point(1, 99);
         Point y = new Point(2, 99);
         final Direction direction = Direction.NORTH;
         List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
         Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
-        assertThat(coordinates.getX()).isEqualToComparingFieldByField(x);
-        assertThat(coordinates.getY()).isEqualToComparingFieldByField(y);
+        assertThat(coordinates.getX().getLocation()).isEqualTo(1);
+    }
+
+    @Test
+    public void newInstanceShouldSetXMaxLocation() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
+        assertThat(coordinates.getX().getMaxLocation()).isEqualTo(99);
+    }
+
+    @Test
+    public void newInstanceShouldSetYLocation() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
+        assertThat(coordinates.getY().getLocation()).isEqualTo(2);
+    }
+
+    @Test
+    public void newInstanceShouldSetYMaxLocation() {
+        Point x = new Point(1, 99);
+        Point y = new Point(2, 99);
+        final Direction direction = Direction.NORTH;
+        List<Obstacle> obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30, 30));
+        Coordinates coordinates = new Coordinates(x, y, direction, obstacles);
+        assertThat(coordinates.getY().getMaxLocation()).isEqualTo(99);
     }
 
     @Test

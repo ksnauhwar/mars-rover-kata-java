@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.technologyconversations.kata.marsrover.CoordinatesSpec" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-06-19T12:01:46.933Z" hostname="KULDEEP" time="0.108">
+<testsuite name="com.technologyconversations.kata.marsrover.CoordinatesSpec" tests="16" skipped="0" failures="0" errors="0" timestamp="2025-06-19T12:08:49.348Z" hostname="KULDEEP" time="0.11">
   <properties/>
-  <testcase name="moveBackwardShouldDecreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.053"/>
-  <testcase name="moveForwardShouldDecreaseXWhenDirectionIsWest()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.0"/>
-  <testcase name="newInstanceShouldSetDirection()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.005"/>
-  <testcase name="moveForwardShouldIncreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.0"/>
+  <testcase name="moveBackwardShouldDecreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.046"/>
+  <testcase name="moveForwardShouldDecreaseXWhenDirectionIsWest()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="newInstanceShouldSetDirection()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.003"/>
+  <testcase name="newInstanceShouldSetXMaxLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.003"/>
+  <testcase name="moveForwardShouldIncreaseYWhenDirectionIsNorth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.003"/>
+  <testcase name="newInstanceShouldSetYMaxLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.0"/>
+  <testcase name="newInstanceShouldSetXLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
   <testcase name="moveBackwardShouldIncreaseXWhenDirectionIsWest()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.002"/>
   <testcase name="moveBackwardShouldIncreaseYWhenDirectionIsSouth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
-  <testcase name="toStringShouldReturnXAndY()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.016"/>
-  <testcase name="moveForwardShouldNotChangeLocationsWhenObstacleIsFound()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.002"/>
-  <testcase name="newInstanceShouldSetXAndYParams()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="toStringShouldReturnXAndY()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.017"/>
+  <testcase name="moveForwardShouldNotChangeLocationsWhenObstacleIsFound()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
   <testcase name="moveBackwardShouldDecreaseXWhenDirectionIsEast()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
   <testcase name="moveForwardShouldIncreaseXWhenDirectionIsEast()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
   <testcase name="moveForwardShouldDecreaseYWhenDirectionIsSouth()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
-  <testcase name="newInstanceShouldSetObstacles()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.008"/>
+  <testcase name="newInstanceShouldSetYLocation()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="newInstanceShouldSetObstacles()" classname="com.technologyconversations.kata.marsrover.CoordinatesSpec" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
