@@ -111,7 +111,8 @@ public class RoverSpec {
         Coordinates roverCoordinates = new Coordinates(x, y, direction, obstacles);
         Rover rover = new Rover(roverCoordinates);
         assertThatExceptionOfType(Exception.class)
-                .isThrownBy(() -> rover.receiveSingleCommand('X'));
+                .isThrownBy(() -> rover.receiveSingleCommand('X'))
+                .withMessage("Command X is unknown.");
     }
 
     @Test
